@@ -1,0 +1,8 @@
+# To download Dependencies/packages-> 
+# (after activating virtual environment)pip install -r reqirements.txt
+django == 2.2
+djangorestframework == 3.9.2
+
+# start django project->  django-admin.py startproject project_name .
+# Create a new Django application-> python manage.py startapp app_name
+# Run test server-> python manage.py runserver 0.0.0.0:8000 -> open http://127.0.0.1:8000/
