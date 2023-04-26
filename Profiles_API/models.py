@@ -9,9 +9,6 @@ class UserProfile(models.Model):
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
 
-    class Meta:
-        verbose_name_plural = 'User Profile'
-
     def get_full_name(self):
         """Retrieve full name of the user."""
         return self.name
