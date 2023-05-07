@@ -2,6 +2,9 @@ from django.urls import path, include
 from Profiles_API import views
 from rest_framework.routers import DefaultRouter
 
+# URL = http://127.0.0.1:8000/api/profile/
+# For a specific user http://127.0.0.1:8000/api/profile/[id_name]
+
 router = DefaultRouter()
 # Since in views.py 'queryset' property is set so 'basename' parameter
 # will be picked up from there automatically and we don't need to specify it
