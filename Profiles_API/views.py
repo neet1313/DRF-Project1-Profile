@@ -1,6 +1,6 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
-
+from Profiles_API import models
 
 class HelloApiView(APIView):
     """Test API View"""

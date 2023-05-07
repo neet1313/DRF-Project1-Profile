@@ -6,6 +6,7 @@ from django.db import models
 class UserProfile(models.Model):
     email = models.EmailField(unique=True, max_length=255)
     name = models.CharField(max_length=255, blank=False)
+    # password = models.CharField(max_length=50, blank=False, default=True)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
 
