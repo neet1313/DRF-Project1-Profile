@@ -2,6 +2,8 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import viewsets
 from Profiles_API import models, serializers
+from .custompermissions import CustomPermission
+from rest_framework.authentication import TokenAuthentication
 
 
 class HelloApiView(APIView):
@@ -19,9 +21,13 @@ class HelloApiView(APIView):
         return Response({'message': 'Hello', 'an_apiview': an_apiview})
 
 
-# ------- Model Serializer -------
+# ------- Model Viewset -------
 
 class UserProfileViewset(viewsets.ModelViewSet):
     """Handle creating and updating profiles"""
     serializer_class = serializers.UserProfileSerializer
     queryset = models.UserProfile.objects.all()
+
+    # ---- Authentication and Permission -----
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [CustomPermission]
